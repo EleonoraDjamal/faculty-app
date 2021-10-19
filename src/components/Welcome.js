@@ -17,7 +17,7 @@ Welcome.defaultProps = {
 };
 
 Welcome.propTypes = {
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
   prodi: PropTypes.number,
   gender: PropTypes.string,
 };

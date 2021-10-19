@@ -1,14 +1,18 @@
-import Welcome from './components/Welcome';
-import Hello from './components/Hello';
+import Comment from './components/Comment';
 
+const komentar = {
+  text: "This is my commentar",
+  date: new Date(),
+  author: {
+    avatarUrl: "https://via.placeholder.com/60",
+    name: "John Doe"
+  }
+};
 
 function App() {
   return(
     <div>
-      <Welcome name="Septiano" prodi="TI" />
-      <Welcome name="Fitriani" prodi={2} gender="Female" />
-
-      <Hello name="Jordan" prodi="SI" year={2021} />
+      <Comment text={komentar.text} date={komentar.date} author={komentar.author} />
     </div>
   );
 }
