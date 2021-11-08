@@ -9,26 +9,39 @@
 //   }
 // };
 
-import HomePage from './pages/HomePage';
-import EmployeePage from './pages/EmployeePage';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+// import HomePage from './pages/HomePage';
+// import EmployeePage from './pages/EmployeePage';
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route
+// } from "react-router-dom";
+
+// function App() {
+//   return(
+//     <Router>
+//       <div>
+//         {/* <Comment text={komentar.text} date={komentar.date} author={komentar.author} /> */}
+
+//         <Switch>
+//           <Route exact path="/" component={HomePage} />
+//           <Route path="/employee" component={EmployeePage} />
+//         </Switch>
+//       </div>
+//     </Router>
+//   );
+// }
+
+import ExampleStateHook from './components/ExampleStateHook';
+import Counter from './components/Counter';
 
 function App() {
   return(
-    <Router>
-      <div>
-        {/* <Comment text={komentar.text} date={komentar.date} author={komentar.author} /> */}
-
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/employee" component={EmployeePage} />
-        </Switch>
-      </div>
-    </Router>
+    <div>
+      <h1>React Hook: useState</h1>
+      <ExampleStateHook startValue={100} namaUser="Fitriani" />
+      <Counter />
+    </div>
   );
 }
 
