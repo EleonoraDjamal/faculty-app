@@ -32,15 +32,20 @@
 //   );
 // }
 
-import ExampleStateHook from './components/ExampleStateHook';
-import Counter from './components/Counter';
+// import ExampleStateHook from './components/ExampleStateHook';
+// import Counter from './components/Counter';
+
+// import Penghitung from './components/Penghitung';
+
+import Message from './components/Message';
 
 function App() {
   return(
     <div>
-      <h1>React Hook: useState</h1>
+      {/* <h1>React Hook: useState</h1>
       <ExampleStateHook startValue={100} namaUser="Fitriani" />
-      <Counter />
+      <Counter /> */}
+      <Message />
     </div>
   );
 }
