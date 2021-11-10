@@ -37,15 +37,12 @@
 
 // import Penghitung from './components/Penghitung';
 
-import Message from './components/Message';
+import Todos from './components/todos/Todos';
 
 function App() {
   return(
     <div>
-      {/* <h1>React Hook: useState</h1>
-      <ExampleStateHook startValue={100} namaUser="Fitriani" />
-      <Counter /> */}
-      <Message />
+      <Todos />
     </div>
   );
 }

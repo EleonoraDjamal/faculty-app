@@ -1,42 +1,37 @@
-import { useState } from 'react';
-import Button from './Button';
+import { useReducer } from 'react';
 
-function ExampleStateHook({ startValue, namaUser }) {
-  const [count, setCount] = useState(startValue);
-  const [fullName, setFullName] = useState(namaUser);
+const ACTIONS = {
+  INCREMENT: 'increment',
+  DECREMENT: 'decrement',
+}
 
-  // const handlePlusChange = () => {
-  //   setCount(count + 1);
-  // }
-
-  // const handleMinusChange = () => {
-  //   setCount(count - 1);
-  // }
-
-  const handleFullNameChange = (event) => {
-    setFullName(event.target.value);
+function reducer(state, action) {
+  switch(action.type) {
+    case ACTIONS.INCREMENT:
+      return {count: state.count + 1};
+    case ACTIONS.DECREMENT:
+      return {count: state.count - 1};
+    default:
+      return state;
   }
+}
+
+function ExampleStateHook() {
+  const [state, dispatch] = useReducer(reducer, {count: 0});
 
   return(
     <div>
-      <p>You clicked {count} times.</p>
+      <p>You clicked {state.count} times.</p>
       
-      <Button title="Click to +1" count={count} setCount={setCount} operation="+" />
-      {/* <button onClick={handlePlusChange}>
+      <button onClick={() => dispatch({ type: ACTIONS.INCREMENT })}>
         Click to +1
-      </button> */}
+      </button>
       
       &nbsp;
 
-      <Button title="Click to -1" count={count} setCount={setCount} operation="-" />
-      {/* <button onClick={handleMinusChange}>
+      <button onClick={() => dispatch({ type: ACTIONS.DECREMENT })}>
         Click to -1
-      </button> */}
-
-      <hr />
-
-      <input type="text" name="fullName" onChange={handleFullNameChange} />
-      <h4>Your name is: {fullName}</h4>
+      </button>
     </div>
   );
 }
